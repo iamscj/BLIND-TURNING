@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blind Turning</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Work+Sans:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<script>
+    var divs = $(".parent .child").slice(0, 6);
+</script>
+
+<style>
+    body {
+        background-image: url("https://images.unsplash.com/photo-1579519772836-2732b96a6306?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+        background-size: cover;
+        font-family: 'Oswald', sans-serif;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: bold;
+    }
+
+    .parent {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: auto;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+    }
+
+    .container1 {
+        width: 60vw;
+        margin-right: 3%;
+        background-color: rgb(45, 45, 45);
+    }
+
+    .container2 {
+        max-height: 77vh;
+        width: 100%;
+        overflow-y: scroll;
+        margin-left: 3%;
+        background-color: rgb(45, 45, 45);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+        color: white;
+    }
+
+    p {
+        font-size: 10rem;
+        text-align: center;
+        border-radius: 100px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #956161;
+    }
+
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 1.8rem;
+    }
+
+    /* Responsive Navigation Bar */
+    @media (max-width: 800px) {
+        .navbar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .navbar a {
+            margin: 10px 0;
+        }
+    }
+</style>
+
+
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="#">Live Camera</a>
+        <a href="/cameraoutput">Analysis</a>
+    </div>
+    <h1 style="color: white;">
+        Blind Turn ID : 1
+    </h1>
+
+    <div class="container">
+        <div class="container1">
+            <h3>
+                Live Camera Input
+            </h3>
+            <img src="{{ url_for('video') }}" style="margin:auto" />
+        </div>
+        <div class="container2">
+            <h4 style="color: white; text-align: center; ;">Output Window</h4>
+            <div class="parent">
+                {% for item in darshan %}
+                <div class="children">
+                    {% if item=="red" %}
+                    <p style="color: red; background-color:red">{{ item }}</p>
+                    {% else %}
+                    <p style="color: green; background-color:green">{{ item }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

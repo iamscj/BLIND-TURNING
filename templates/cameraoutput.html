@@ -1,0 +1,189 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Work+Sans:wght@300&display=swap"
+  rel="stylesheet">
+<title>Blind Spot Turning</title>
+
+<head>
+  <style>
+    body {
+      background-image: url("https://images.unsplash.com/photo-1579519772836-2732b96a6306?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+      background-size: cover;
+      font-family: 'Oswald', sans-serif;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      color: #333;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #333;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #956161;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+      font-size: 1.8rem;
+    }
+
+    /* Responsive Navigation Bar */
+    @media (max-width: 800px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar a {
+        margin: 10px 0;
+      }
+    }
+
+    .container1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      height: 100vh;
+      flex-wrap: wrap;
+
+    }
+
+    img {
+      width: 30%;
+    }
+
+    .box {
+      width: 50%;
+      /* Boxes are equal width */
+      height: 50%;
+      /* Boxes are equal height */
+      background-color: #F0F8FF;
+      /* Almond background color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow-y: scroll;
+    }
+
+    .op {
+      font-size: 10rem;
+      text-align: center;
+      border-radius: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/blindturn">Live Camera</a>
+    <a href="#">Analysis</a>
+  </div>
+  <div class="container1">
+    <img src="{{ url_for('static', filename='images/data.jpeg') }}" alt="Image">
+    <img src="{{ url_for('static', filename='images/data1.jpeg') }}" alt="Image">
+    <img src="{{ url_for('static', filename='images/data3.jpeg') }}" alt="Image">
+    <img src="{{ url_for('static', filename='images/data1.jpeg') }}" alt="Image">
+    <img src="{{ url_for('static', filename='images/data.jpeg') }}" alt="Image">
+  </div>
+</body>
+
+</html>
+
+
+<!-- <html>
+  <head>
+    <style>
+      body {
+        background-image: url("https://images.unsplash.com/photo-1579519772836-2732b96a6306?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+        background-size: cover;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        color: #333;
+      }
+
+      p {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Traffic Signals</h1>
+      <p>Traffic signals are an important part of the road infrastructure and are used to regulate and manage the flow of traffic. They help to ensure that drivers and pedestrians are safe and that traffic moves smoothly.</p>
+      <h2>Types of Traffic Signals</h2>
+      <ul>
+        <li>Red Light</li>
+        <li>Yellow Light</li>
+        <li>Green Light</li>
+        <li>Pedestrian Signals</li>
+        <li>Left-Turn Signals</li>
+      </ul>
+      <h2>Important Rules to Follow at Traffic Signals</h2>
+      <ul>
+        <li>Stop at the red light and only proceed when the light turns green.</li>
+        <li>Be cautious when the light turns yellow, as it is a sign to prepare to stop.</li>
+        <li>Always follow pedestrian signals when crossing the road.</li>
+        <li>Respect the signal for left-turns and wait for your turn to make the turn.</li>
+      </ul>
+    </div>
+  </body>
+</html>  -->
